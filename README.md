@@ -2,7 +2,7 @@
 
 Grid-based space management for macOS 26.0+, using native spaces.
 
-<img align="center" width="50%" src="assets/screenshot.png" alt="Screenshot">
+<img align="center" width="75%" src="assets/screenshot.png" alt="Screenshot">
 
 ### Features
 
