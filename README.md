@@ -2,6 +2,8 @@
 
 Grid-based space management for macOS 26.0+, using native spaces.
 
+<img align="center" width="50%" src="assets/screenshot.png" alt="Screenshot">
+
 ### Features
 
  - Visualize space thumbnails in grid overview by holding down `<mod>` for 1 second.
