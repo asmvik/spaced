@@ -23,6 +23,7 @@ build :: () {
 
     memory_visualizer  := false;
     memory_leak_report := false;
+    create_app_bundle  := false;
 
     for args {
         if it == "-memory_visualizer" {
@@ -30,6 +31,9 @@ build :: () {
             break;
         } else if it == "-memory_leak_report" {
             memory_leak_report = true;
+            break;
+        } else if it == "-create_app_bundle" {
+            create_app_bundle = true;
             break;
         }
     }
@@ -60,6 +64,12 @@ build :: () {
 
     for plugins if it.finish   then it.finish  (it);
     for plugins if it.shutdown then it.shutdown(it);
+
+    if create_app_bundle {
+        macOS_Bundler :: #import "macOS_Bundler";
+        macOS_Bundler.create_app_bundle(TARGET_NAME, tprint("%/%", TARGET_PATH, TARGET_NAME), "assets/Info.plist", "", true);
+        macOS_Bundler.codesign(TARGET_NAME, "spaced-cert");
+    }
 }
 
 message_loop :: (w: Workspace) {
