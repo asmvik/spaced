@@ -11,9 +11,12 @@ Grid-based space management for macOS 26.0+, using native spaces.
  - Switch between spaces in grid, skipping animation, by tapping `<mod> + <arrow-key>`.
  - Shortcuts are not affected by Secure Input (Secure Keyboard Entry) limitations.
 
+Quit by holding `<mod>` until the overview is visible, then press `q`.
+
 ### Permissions
 
- - Requires access to CGEventPost API to synthesize native space switch events.
+ - Requires access to CGEventPost API to synthesize native space switch events.  
+   Effectively, this is the same as granting access to the Accessibility API.
  - Requires Screen Capture access to display space thumbnails in overview mode.  
    Desktop Wallpaper will be shown if Screen Capture access is not granted. 
 
