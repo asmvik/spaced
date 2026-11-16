@@ -13,5 +13,6 @@ Grid-based space management for macOS 26.0+, using native spaces.
 
 ### Permissions
 
- - Requires Screen Capture access to display space thumbnails in overview mode.
  - Requires access to CGEventPost API to synthesize native space switch events.
+ - Requires Screen Capture access to display space thumbnails in overview mode.  
+   Desktop Wallpaper will be shown if Screen Capture access is not granted. 
