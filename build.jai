@@ -70,7 +70,7 @@ build :: () {
         BUNDLE_PATH :: "bundle";
         make_directory_if_it_does_not_exist(BUNDLE_PATH);
         set_working_directory(BUNDLE_PATH);
-        macOS_Bundler.create_app_bundle(TARGET_NAME, tprint("../%/%", TARGET_PATH, TARGET_NAME), "../assets/Info.plist", "", true);
+        macOS_Bundler.create_app_bundle(TARGET_NAME, tprint("../%/%", TARGET_PATH, TARGET_NAME), "../assets/Info.plist");
         macOS_Bundler.codesign(tprint("%.app", TARGET_NAME), "spaced-cert");
         macOS_Bundler.create_dmg(TARGET_NAME, tprint("%.app", TARGET_NAME));
         macOS_Bundler.codesign(tprint("%.dmg", TARGET_NAME), "spaced-cert");
