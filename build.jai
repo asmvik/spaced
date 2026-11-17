@@ -74,6 +74,9 @@ build :: () {
         macOS_Bundler.codesign(tprint("%.app", TARGET_NAME), "spaced-cert");
         macOS_Bundler.create_dmg(TARGET_NAME, tprint("%.app", TARGET_NAME));
         macOS_Bundler.codesign(tprint("%.dmg", TARGET_NAME), "spaced-cert");
+    } else {
+        macOS_Bundler :: #import "macOS_Bundler";
+        macOS_Bundler.codesign(tprint("%/%", TARGET_PATH, TARGET_NAME), "spaced-cert");
     }
 }
 
