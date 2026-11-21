@@ -68,6 +68,7 @@ build :: () {
     if create_app_bundle {
         macOS_Bundler :: #import "macOS_Bundler";
         BUNDLE_PATH :: "bundle";
+        delete_directory(BUNDLE_PATH);
         make_directory_if_it_does_not_exist(BUNDLE_PATH);
         set_working_directory(BUNDLE_PATH);
         macOS_Bundler.create_app_bundle(TARGET_NAME, tprint("../%/%", TARGET_PATH, TARGET_NAME), "../assets/Info.plist");
