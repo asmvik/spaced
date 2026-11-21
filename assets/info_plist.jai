@@ -1,3 +1,4 @@
+TEMPLATE :: #string DONE
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -11,9 +12,9 @@
     <key>CFBundleIconFile</key>
     <string>spaced.icns</string>
     <key>CFBundleVersion</key>
-    <string>1.0.0</string>
+    <string>%1</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.0.0</string>
+    <string>%1</string>
     <key>LSMinimumSystemVersion</key>
     <string>26.0</string>
 	<key>CFBundlePackageType</key>
@@ -26,3 +27,4 @@
 	<string>Copyright © 2026 Åsmund Vikane. All rights reserved.</string>
 </dict>
 </plist>
+DONE

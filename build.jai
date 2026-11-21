@@ -1,5 +1,6 @@
 TARGET_PATH :: "bin";
 TARGET_NAME :: "spaced";
+APP_VERSION :: "0.0.0";
 
 #run,stallable build();
 
@@ -68,11 +69,17 @@ build :: () {
     if create_app_bundle {
         macOS_Bundler :: #import "macOS_Bundler";
         BUNDLE_PATH :: "bundle";
+
+        macOS_Plist :: #import,file "assets/info_plist.jai";
+        PLIST :: #run tprint(macOS_Plist.TEMPLATE, APP_VERSION);
+
         delete_directory(BUNDLE_PATH);
         make_directory_if_it_does_not_exist(BUNDLE_PATH);
         set_working_directory(BUNDLE_PATH);
-        macOS_Bundler.create_app_bundle(TARGET_NAME, tprint("../%/%", TARGET_PATH, TARGET_NAME), "../assets/Info.plist");
+
+        macOS_Bundler.create_app_bundle(TARGET_NAME, tprint("../%/%", TARGET_PATH, TARGET_NAME), PLIST);
         macOS_Bundler.codesign(tprint("%.app", TARGET_NAME), "spaced-cert");
+
         macOS_Bundler.create_dmg(TARGET_NAME, tprint("%.app", TARGET_NAME));
         macOS_Bundler.codesign(tprint("%.dmg", TARGET_NAME), "spaced-cert");
     } else {
