@@ -1,6 +1,5 @@
 TARGET_PATH :: "bin";
 TARGET_NAME :: "spaced";
-APP_VERSION :: "0.0.0";
 
 #run,stallable build();
 
@@ -67,17 +66,23 @@ build :: () {
     for plugins if it.shutdown then it.shutdown(it);
 
     if create_app_bundle {
-        macOS_Bundler :: #import "macOS_Bundler";
-        BUNDLE_PATH :: "bundle";
-
-        macOS_Plist :: #import,file "assets/info_plist.jai";
-        PLIST :: #run tprint(macOS_Plist.TEMPLATE, APP_VERSION);
+        macOS_Bundler     :: #import "macOS_Bundler";
+        BUNDLE_PATH       :: "bundle";
+        BUNDLE_IDENTIFIER :: "com.asmvik.spaced";
+        BUNDLE_VERSION    :: "0.0.0";
 
         delete_directory(BUNDLE_PATH);
         make_directory_if_it_does_not_exist(BUNDLE_PATH);
         set_working_directory(BUNDLE_PATH);
 
-        macOS_Bundler.create_app_bundle(TARGET_NAME, tprint("../%/%", TARGET_PATH, TARGET_NAME), PLIST);
+        macOS_Bundler.plist_start(BUNDLE_IDENTIFIER, TARGET_NAME, BUNDLE_VERSION);
+        macOS_Bundler.plist_write_key_value("LSMinimumSystemVersion", "26.0");
+        macOS_Bundler.plist_write_key_value("LSBackgroundOnly", true);
+        macOS_Bundler.plist_write_key_value("NSScreenCaptureUsageDescription", "Requires Screen Capture access to display space thumbnails in overview mode.");
+        macOS_Bundler.plist_write_key_value("NSHumanReadableCopyright", "Copyright © 2026 Åsmund Vikane. All rights reserved.");
+        macOS_Bundler.plist_end();
+
+        macOS_Bundler.create_app_bundle(TARGET_NAME, tprint("../%/%", TARGET_PATH, TARGET_NAME));
         macOS_Bundler.codesign(tprint("%.app", TARGET_NAME), "spaced-cert");
 
         macOS_Bundler.create_dmg(TARGET_NAME, tprint("%.app", TARGET_NAME));
