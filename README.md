@@ -1,9 +1,26 @@
-## spaced
+<h2 align="center">
+    spaced
+</h2>
+<p align="center">
+  <b>Grid-based space management for macOS.</b>
+</p>
+<p align="center">
+  <a href="https://github.com/asmvik/spaced/blob/master/CHANGELOG.md">
+    <img src="https://img.shields.io/badge/view-changelog-green.svg" alt="Changelog Badge">
+  </a>
+  <a href="https://github.com/asmvik/spaced/releases">
+    <img src="https://img.shields.io/github/commits-since/asmvik/spaced/latest.svg?color=green" alt="Version Badge">
+  </a>
+</p>
+<p align="center">
+    <img width="75%" src="assets/screenshot.png" alt="Screenshot">
+</p>
 
-Grid-based space management for macOS 26.0+, using native spaces.
+### System Requirements
 
-<img align="center" width="80%" src="assets/screenshot.png" alt="Screenshot">
-
+ - Apple Silicon
+ - macOS 26 Tahoe
+    
 ### Features
 
  - Visualize space thumbnails in grid overview by holding down `<mod>` for 1 second.
