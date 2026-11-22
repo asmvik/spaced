@@ -5,7 +5,7 @@
   <b>Grid-based space management for macOS.</b>
 </p>
 <p align="center">
-  <a href="https://github.com/asmvik/spaced/blob/master/CHANGELOG.md">
+  <a href="https://github.com/asmvik/spaced/blob/main/CHANGELOG.md">
     <img src="https://img.shields.io/badge/view-changelog-green.svg" alt="Changelog Badge">
   </a>
   <a href="https://github.com/asmvik/spaced/releases">
