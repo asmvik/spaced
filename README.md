@@ -5,15 +5,15 @@
   <b>Grid-based space management for macOS.</b>
 </p>
 <p align="center">
+    <img width="75%" src="assets/screenshot.png" alt="Screenshot">
+</p>
+<p align="center">
   <a href="https://github.com/asmvik/spaced/blob/main/CHANGELOG.md">
     <img src="https://img.shields.io/badge/view-changelog-green.svg" alt="Changelog Badge">
   </a>
   <a href="https://github.com/asmvik/spaced/releases">
     <img src="https://img.shields.io/github/commits-since/asmvik/spaced/latest.svg?color=green" alt="Version Badge">
   </a>
-</p>
-<p align="center">
-    <img width="75%" src="assets/screenshot.png" alt="Screenshot">
 </p>
 
 ### System Requirements
@@ -32,10 +32,8 @@ Quit by holding `<mod>` until the overview is visible, then press `q`.
 
 ### Permissions
 
- - Requires access to CGEventPost API to synthesize native space switch events.  
-   Effectively, this is the same as granting access to the Accessibility API.
- - Requires Screen Capture access to display space thumbnails in overview mode.  
-   Desktop Wallpaper will be shown if Screen Capture access is not granted. 
+ - Requires access to CGEventPost API to synthesize native space switch events. Effectively, this is the same as granting access to the Accessibility API.
+ - Requires Screen Capture access to display space thumbnails in overview mode. Desktop Wallpaper will be shown if Screen Capture access is not granted. 
 
 ### Installation
 
@@ -49,5 +47,4 @@ If you see a security warning that the app cannot be opened or is from an uniden
  
 ### Start on login
 
-Open `System Settings`. Choose `General` and select `Login Items & Extensions`.  
-In the top section labeled `Open at Login`, click the `+` symbol and select `spaced` in your `Applications` folder.
+Open `System Settings`. Choose `General` and select `Login Items & Extensions`. In the top section labeled `Open at Login`, click the `+` symbol and select `spaced` in your `Applications` folder.
