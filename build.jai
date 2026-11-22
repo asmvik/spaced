@@ -3,7 +3,7 @@ TARGET_NAME  :: "spaced";
 TARGET_CERT  :: "spaced-cert";
 TARGET_MAJOR ::  0;
 TARGET_MINOR ::  0;
-TARGET_PATCH ::  0;
+TARGET_PATCH ::  1;
 MIN_OS_MAJOR :: 26;
 MIN_OS_MINOR ::  0;
 BUNDLE_ID    :: #run tprint("com.asmvik.%", TARGET_NAME);
