@@ -75,8 +75,8 @@ build :: () {
     for plugins if it.shutdown then it.shutdown(it);
 
     if create_app_bundle {
-        macOS_Bundler     :: #import "macOS_Bundler";
-        BUNDLE_PATH       :: "bundle";
+        macOS_Bundler :: #import "macOS_Bundler";
+        BUNDLE_PATH   :: "bundle";
 
         delete_directory(BUNDLE_PATH);
         make_directory_if_it_does_not_exist(BUNDLE_PATH);
