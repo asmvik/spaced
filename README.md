@@ -18,8 +18,8 @@
 
 ### System Requirements
 
- - Architecture: Apple Silicon
- - Operating System: macOS 26 Tahoe
+ - **Architecture**: Apple Silicon
+ - **Operating System**: macOS 26 Tahoe
     
 ### Features
 
@@ -37,7 +37,17 @@ Quit by holding `<mod>` until the overview is visible, then press `q`.
  - Requires Screen Capture access to display space thumbnails in overview mode.  
    Desktop Wallpaper will be shown if Screen Capture access is not granted. 
 
+### Installation
+
+ - Navigate to the [latest release](https://github.com/asmvik/spaced/releases/latest) and download `spaced.dmg`
+ - Double-click the downloaded `.dmg` file. Drag and drop `spaced` into `Applications`.
+ - Eject the `.dmg` in Finder sidebar or using the Desktop icon and delete it.
+
+If you see a security warning that the app cannot be opened or is from an unidentified developer:
+ - Open `System Settings`. Choose `Privacy & Security`.
+ - Scroll down to the security message: `"spaced.dmg" was blocked to protect your Mac.` and click `Open Anyway`.
+ 
 ### Start on login
 
 Open `System Settings`. Choose `General` and select `Login Items & Extensions`.  
-In the top section labeled `Open at Login`, click the `+` symbol and select `spaced.app` in your `/Applications` folder.
+In the top section labeled `Open at Login`, click the `+` symbol and select `spaced` in your `Applications` folder.
