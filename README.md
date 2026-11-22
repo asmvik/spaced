@@ -18,8 +18,8 @@
 
 ### System Requirements
 
- - Apple Silicon
- - macOS 26 Tahoe
+ - Architecture: Apple Silicon
+ - Operating System: macOS 26 Tahoe
     
 ### Features
 
