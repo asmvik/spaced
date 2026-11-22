@@ -1,5 +1,10 @@
-TARGET_PATH :: "bin";
-TARGET_NAME :: "spaced";
+TARGET_PATH  :: "bin";
+TARGET_NAME  :: "spaced";
+TARGET_MAJOR ::  0;
+TARGET_MINOR ::  0;
+TARGET_PATCH ::  0;
+MIN_OS_MAJOR :: 26;
+MIN_OS_MINOR ::  0;
 
 #run,stallable build();
 
@@ -40,6 +45,7 @@ build :: () {
 
     options.output_path = TARGET_PATH;
     options.output_executable_name = TARGET_NAME;
+    options.minimum_os_version = .{ MIN_OS_MAJOR, MIN_OS_MINOR };
     options.cpu_target = .ARM64;
 
     set_working_directory(#filepath);
@@ -69,14 +75,14 @@ build :: () {
         macOS_Bundler     :: #import "macOS_Bundler";
         BUNDLE_PATH       :: "bundle";
         BUNDLE_IDENTIFIER :: "com.asmvik.spaced";
-        BUNDLE_VERSION    :: "0.0.0";
+        BUNDLE_VERSION    := tprint("%.%.%", TARGET_MAJOR, TARGET_MINOR, TARGET_PATCH);
 
         delete_directory(BUNDLE_PATH);
         make_directory_if_it_does_not_exist(BUNDLE_PATH);
         set_working_directory(BUNDLE_PATH);
 
         macOS_Bundler.plist_start(BUNDLE_IDENTIFIER, TARGET_NAME, BUNDLE_VERSION);
-        macOS_Bundler.plist_write_key_value("LSMinimumSystemVersion", "26.0");
+        macOS_Bundler.plist_write_key_value("LSMinimumSystemVersion", tprint("%.%", MIN_OS_MAJOR, MIN_OS_MINOR));
         macOS_Bundler.plist_write_key_value("LSBackgroundOnly", true);
         macOS_Bundler.plist_write_key_value("NSScreenCaptureUsageDescription", "Requires Screen Capture access to display space thumbnails in overview mode.");
         macOS_Bundler.plist_write_key_value("NSHumanReadableCopyright", "Copyright © 2026 Åsmund Vikane. All rights reserved.");
