@@ -45,7 +45,7 @@ Quit by holding `<mod>` until the overview is visible, then press `q`.
 
 If you see a security warning that the app cannot be opened or is from an unidentified developer:
  - Open `System Settings`. Choose `Privacy & Security`.
- - Scroll down to the message: `"spaced.dmg" was blocked to protect your Mac.` and click `Open Anyway`.
+ - Scroll down to the message: `"spaced" was blocked to protect your Mac.` and click `Open Anyway`.
  
 ### Start on login
 
